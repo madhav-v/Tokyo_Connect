@@ -179,6 +179,31 @@ export const testimonials = [
     country: "Spain",
     text: "TABI made traveling in Japan less scary. I felt safe, included, and excited.",
   },
+  {
+    name: "Linh",
+    country: "Vietnam",
+    text: "I loved how TABI mixed travel with cultural activities. It felt more meaningful than a normal tour.",
+  },
+  {
+    name: "Daniel",
+    country: "Germany",
+    text: "The group activities helped me talk to new people easily. I made friends on the first day.",
+  },
+  {
+    name: "Priya",
+    country: "India",
+    text: "Everything was planned clearly, so I did not have to worry about transportation or schedules.",
+  },
+  {
+    name: "Ahmed",
+    country: "Egypt",
+    text: "TABI helped me explore Japan on a student budget. The experience felt safe and welcoming.",
+  },
+  {
+    name: "Emma",
+    country: "France",
+    text: "The trip was fun, social, and educational. I learned about Japanese culture while making friends.",
+  },
 ];
 
 export const galleryImages = [
