@@ -19,7 +19,7 @@ function App() {
       <Navbar />
       <Hero />
       <LiveBookings />
-      <Customers />
+      {/* <Customers /> */}
       <Offering />
       <ValueProposition />
       {/* <CoreCompetencies /> */}
