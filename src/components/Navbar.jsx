@@ -1,67 +1,50 @@
-import { Link, NavLink } from "react-router-dom";
-import { MapPin, Menu } from "lucide-react";
 import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
 
-  const navItems = [
-    { path: "/events", label: "Events" },
-    { path: "/bookings", label: "My Bookings" },
-    { path: "/about-safety", label: "Safety" },
-    { path: "/admin", label: "Admin Demo" },
+  const links = [
+    "Bookings",
+    "Customers",
+    "Offering",
+    // "Value",
+    // "Competencies",
+    // "People",
+    "Gallery",
   ];
 
   return (
-    <header className="bg-white/90 backdrop-blur border-b border-gray-100 sticky top-0 z-50">
-      <div className="page-container py-4 flex items-center justify-between">
-        <Link
-          to="/"
-          className="flex items-center gap-2 font-bold text-xl text-ink"
-        >
-          <span className="bg-tokyoRed text-white p-2 rounded-2xl">
-            <MapPin size={20} />
-          </span>
-          Tokyo Connect
-        </Link>
+    <header className="navbar">
+      <a href="#" className="logo">
+        <span>旅</span>
+        TABI
+      </a>
 
-        <nav className="hidden md:flex items-center gap-6">
-          {navItems.map((item) => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              className={({ isActive }) =>
-                isActive
-                  ? "text-tokyoRed font-semibold"
-                  : "text-gray-600 hover:text-tokyoRed font-medium"
-              }
-            >
-              {item.label}
-            </NavLink>
-          ))}
-        </nav>
+      <nav className="desktop-links">
+        {links.map((link) => (
+          <a key={link} href={`#${link.toLowerCase()}`}>
+            {link}
+          </a>
+        ))}
+      </nav>
 
-        <button
-          className="md:hidden p-2 rounded-xl border"
-          onClick={() => setOpen(!open)}
-        >
-          <Menu />
-        </button>
-      </div>
+      <button className="menu-button" onClick={() => setOpen(!open)}>
+        {open ? <X /> : <Menu />}
+      </button>
 
       {open && (
-        <div className="md:hidden bg-white border-t border-gray-100 px-4 pb-4">
-          {navItems.map((item) => (
-            <NavLink
-              key={item.path}
-              to={item.path}
+        <nav className="mobile-links">
+          {links.map((link) => (
+            <a
+              key={link}
+              href={`#${link.toLowerCase()}`}
               onClick={() => setOpen(false)}
-              className="block py-3 text-gray-700 font-medium"
             >
-              {item.label}
-            </NavLink>
+              {link}
+            </a>
           ))}
-        </div>
+        </nav>
       )}
     </header>
   );

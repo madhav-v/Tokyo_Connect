@@ -1,34 +1,36 @@
-import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import LiveBookings from "./components/LiveBookings";
+import Customers from "./components/Customers";
+import Offering from "./components/Offering";
+import ValueProposition from "./components/ValueProposition";
+import CoreCompetencies from "./components/CoreCompetencies";
+import People from "./components/People";
+import DistinctiveCompetencies from "./components/DistinctiveCompetencies";
+import Destinations from "./components/Destinations";
+import Gallery from "./components/Gallery";
+import Testimonials from "./components/Testimonials";
+import AITripMatcher from "./components/AITripMatcher";
 import Footer from "./components/Footer";
-
-import Home from "./pages/Home";
-import Events from "./pages/Events";
-import EventDetail from "./pages/EventDetail";
-import Checkout from "./pages/Checkout";
-import MyBookings from "./pages/MyBookings";
-import AboutSafety from "./pages/AboutSafety";
-import Admin from "./pages/Admin";
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <>
       <Navbar />
-
-      <main className="flex-grow">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/events/:id" element={<EventDetail />} />
-          <Route path="/checkout/:id" element={<Checkout />} />
-          <Route path="/bookings" element={<MyBookings />} />
-          <Route path="/about-safety" element={<AboutSafety />} />
-          <Route path="/admin" element={<Admin />} />
-        </Routes>
-      </main>
-
+      <Hero />
+      <LiveBookings />
+      <Customers />
+      <Offering />
+      <ValueProposition />
+      {/* <CoreCompetencies /> */}
+      {/* <People /> */}
+      {/* <DistinctiveCompetencies /> */}
+      <Destinations />
+      <Gallery />
+      <Testimonials />
+      <AITripMatcher />
       <Footer />
-    </div>
+    </>
   );
 }
 
