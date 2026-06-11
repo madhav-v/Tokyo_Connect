@@ -5,13 +5,13 @@ function Navbar() {
   const [open, setOpen] = useState(false);
 
   const links = [
-    "Bookings",
-    "Customers",
-    "Offering",
-    // "Value",
-    // "Competencies",
-    // "People",
-    "Gallery",
+    { label: "Trips", href: "#bookings" },
+    { label: "Offering", href: "#offering" },
+    { label: "Value", href: "#value" },
+    // { label: "Skills", href: "#competencies" },
+    // { label: "Team", href: "#people" },
+    { label: "Destinations", href: "#destinations" },
+    { label: "Gallery", href: "#gallery" },
   ];
 
   return (
@@ -23,11 +23,15 @@ function Navbar() {
 
       <nav className="desktop-links">
         {links.map((link) => (
-          <a key={link} href={`#${link.toLowerCase()}`}>
-            {link}
+          <a key={link.label} href={link.href}>
+            {link.label}
           </a>
         ))}
       </nav>
+
+      <a href="#matcher" className="nav-cta">
+        Find My Trip
+      </a>
 
       <button className="menu-button" onClick={() => setOpen(!open)}>
         {open ? <X /> : <Menu />}
@@ -36,14 +40,18 @@ function Navbar() {
       {open && (
         <nav className="mobile-links">
           {links.map((link) => (
-            <a
-              key={link}
-              href={`#${link.toLowerCase()}`}
-              onClick={() => setOpen(false)}
-            >
-              {link}
+            <a key={link.label} href={link.href} onClick={() => setOpen(false)}>
+              {link.label}
             </a>
           ))}
+
+          <a
+            href="#matcher"
+            className="mobile-cta"
+            onClick={() => setOpen(false)}
+          >
+            Find My Trip
+          </a>
         </nav>
       )}
     </header>
